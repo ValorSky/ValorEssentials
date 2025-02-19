@@ -1,0 +1,4 @@
+enabled: true
+messages:
+  - "&b%player% &fvient d'être &ctué&f par &3%killer%&f."
+  - "&b%player% &fvient de rencontrer un &3ogre&f et succombe à ses &cattaques&f."

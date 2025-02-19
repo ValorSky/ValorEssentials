@@ -1,0 +1,198 @@
+prefix: ":prefix: "
+error: ":erreur: "
+alert: ":alert: "
+
+no-player: "§cJoueur introuvable."
+no-int: "§cValeur incorrect."
+no-money: "§cVous ne disposez pas des §4fonds§c nécessaires."
+no-location: "§cPosition invalide."
+no-world: "§cMonde invalide."
+no-permission: "§cVous n'avez pas la permission."
+no-online-player: "&cAucun joueurs en ligne."
+inventory-full: "&cVotre inventaire est complet"
+invalid-location: "&cMonde éronné.."
+
+randomtp: "§fVous venez de vous §atéléporter aléatoirement§f."
+
+spawn-set: "§fVous venez de §amodifier§f la position du §2Spawn§f."
+spawn-no-location: "§cAucun point d'apparition n'a été définis."
+
+teleport-at: "§fVous venez de vous §btéléporter§f vers §3%name%§f."
+teleport-cooldown: "&fVous allez être &atéléporté &fdans &2%time% secondes&f vers &a%name%&f."
+teleport-other: "&fVous venez de téléporter &a%target%&f vers &2%name%&f."
+
+god-set: "&fVous venez d'activer le &a&lGOD MODE&f."
+god-unset: "&fVous venez de désactiver le &a&lGOD MODE&f."
+god-set-other: "&fVous venez d'activer le &a&lGOD MODE&f pour le joueur &2%target%&f."
+god-unset-other: "&fVous venez de désactiver le &a&lGOD MODE&f pour le joueur &2%target%&f."
+
+list-msg:
+  - "&fJoueur(s) en ligne&7: &a%count%"
+  - "&fStaff(s) en ligne&7: &a%staff_count%"
+
+eco-balance: "&fVotre argent&7: &a&l%money% &f:money:"
+eco-balance-other: "&fArgent de &2&l%player%&7: &a&l%money% &f:money:"
+eco-give: "&fVous venez de &acréditer&f le solde de &2%player%&f d'un montant de &a%money%&f :money:."
+eco-receive: "&fVous venez d'être &acrédité&f d'un montant de &a%money%&f :money:."
+eco-take: "&fVous venez de &cdébiter&f le solde de &2%player%&f d'un montant de &a%money%&f :money:."
+eco-withdraw: "&fVous venez d'être &cdébité&f d'un montant de &a%money%&f :money:."
+
+back-no-previous: "&cVous ne disposez d'aucune position précédentes."
+
+gamemode-change: "&fVous venez de &amodifier&f votre &2GameMode&f en&7: &a&l%gamemode%"
+gamemode-change-other: "&fVous venez de &amodifier&f le &aGameMode&f de &2%target%&f en&7: &a&l%gamemode%"
+gamemode-no-exist: "§cCe GameMode est inexistant."
+
+seen:
+  - "&7&m-----------------"
+  - ""
+  - "  &fPseudo&7: &a%target%"
+  - "  &fAdresse&7: &a%adresse%"
+  - "  &fDernière connexion&7: &a%date%"
+  - "  &fDernière position&7: &a%pos%"
+  - ""
+  - "&7&m-----------------"
+seen-no-last: "&cAucune précédentes connexion."
+
+heal: "&fVous venez d'être &asoigné&f."
+heal-other: "&fVous venez de &asoigner&f le joueur &2%target%&f."
+
+bottlexp-no-level: "§cVous ne disposez d'aucun niveau."
+bottlexp-add: "&fVous venez de &amettre&f vos &aniveaux&f en &2bouteille&f."
+bottlexp-add-level: "&fVous venez d'&aajouter &a%level%&f à vos &2niveaux&f."
+
+clearlag-clear: "&fLes &aentités&f vient d'être &2supprimés&f. &7(%count%)"
+clearlag-start: "&fLes &aentités&f vont être &csupprimés&f dans &2%minutes% minutes&f."
+clearlag-launch: "&fLes &aentités&f vont être &csupprimés&f dans &2%time% secondes&f."
+
+feed-on: "&fVous venez d'&aactiver&f votre &aAutoFeed&f."
+feed-off: "&fVous venez de &cdésactiver&f votre &aAutoFeed&f."
+feed: "&fVous venez d'être &2rassasié&f."
+feed-other: "&fVous venez de &2rassasier&f le joueur &a%player%&f."
+
+hat-cant: "&cVous ne pouvez pas mettre ceci en chapeau."
+hat-set: "&fVous venez de &amodifier&f votre &2chapeau&f."
+
+infos-site: "&ahttps://valorsky.fr"
+infos-shop: "&ahttps://valorsky.fr/shop"
+
+kill-player: "&fVous venez de &ctuer&f le joueur &a%target%&f."
+
+warp-no-exist: "§cAucun warp de ce nom a été défini."
+warp-exist: "&cCe warp existe déjà."
+warp-create: "&fVous venez de &acréer&f le &awarp&f au nom de&7: &2%name%"
+warp-delete: "&fVous venez de &csupprimer&f le &awarp&f au nom de&7: &2%name%"
+
+nick-change: "&fVous venez de &amodifier&f votre &2nom&f en&7: %name%"
+nick-no-have: "&cVous ne disposez d'aucun surnom."
+nick-remove: "&fVous venez de &csupprimer&f votre &asurnom&f."
+
+teleport-here: "&fVous venez de &atéléporter&f vers vous le joueur &2%target%&f."
+teleport-here-all: "&fVous venez de &atéléporter&f tous les &2joueurs en lignes&f."
+teleport-request-have: "&cVous possèdez déjà une demande de téléportation."
+teleport-request-send: "&fVous venez d'&aenvoyer&f une &ademande de téléportation&f à &2%target%&f."
+teleport-request-receive:
+  - "&7&m-------------"
+  - ""
+  - "&fDemande de &atéléportation&f de la part de &2%sender%"
+  - ""
+  - ":check: &aAccepter&7 - &f/tpaccept"
+  - ":cross: &cRefuser&7 - &f/tpdeny"
+  - ""
+  - "&7&m-------------"
+teleport-request-no-have: "§cVous ne disposez d'aucune demande de téléportation."
+teleport-accept: "&fVous avez &aaccepté&f la demande de &atéléportation&f."
+teleport-deny: "&fVous avez &crefusé&f la demande de &atéléportation&f."
+
+data-save: "&fVous venez de &asauvegarder&f toute les &2données&f."
+
+speed-change: "&fVous venez de &amodifier &fvotre &avitesse&f à &2%value%&f."
+
+vanish-set: "&fVous venez de vous rendre &ainvisible&f."
+vanish-unset: "&fVous venez de vous rendre &avisible&f."
+
+home-no-exist: "&cAucune résidence ne porte ce nom."
+home-already-exist: "&cUne résidence de ce nom existe déjà."
+home-set: "&fVous venez de &acréer&f la &arésidence&7: &2%name%"
+home-remove: "&fVous venez de &csupprimer&f la &arésidence&7: &2%name%"
+home-max-reached: "&cVous disposez déjà de trop de résidences."
+
+condense: "&fVous venez de &atransformer&f vos &aminerais&f en &2blocks&f."
+condense-cant: "&cAucun minerai ne peut être transformé en block."
+
+repair-no-item: "&cAucun item n'est réparable."
+repair-hand: "&fVous venez de &aréparer&f votre &2objets en main&f."
+repair-all: "&fVous venez de &aréparer&f tout votre &2inventaire&f."
+
+kit-already-exist: "&cUn kit portant ce nom existe déjà."
+kit-no-item: "&cAucun item ne peut être ajouté à ce kit."
+kit-no-exist: "&cAucun kit ne porte ce nom."
+kit-create: "&fVous venez de &acréer&f le kit&7: &2%name%"
+kit-remove: "&fVous venez de &asupprimer&f le kit&7: &2%name%"
+kit-receive: "&fVous venez de &arecevoir&f le kit&7: &2%name%"
+kit-cant-take: "&cVous pourrez reprendre ce kit dans &4%secondes% secondes&c."
+kit-any: "&cAucun kit disponible."
+kit-available: "&aKit(s) &2disponible&7: &f%s"
+
+enchantment-item-no-valid: "&cCet item ne peut être enchanté."
+enchantment-limit-level: "&cCet item ne peut pas être enchanté plus haut."
+enchantment-no-exist: "&cCet enchantement n'existe pas."
+enchantment-remove: "&fVous venez de &asupprimer&f cet &2enchantement&f."
+enchantment-add: "&fVous venez d'ajouter un &aenchantement&7: &2%name%"
+
+give-no-item: "§cL'item %name% est inexistant."
+give-full: "§fVous venez de §arecevoir §7(au sol) §3%number% §b%name%§f."
+give: "§fVous venez de §erecevoir §5%number% §6%name%§f."
+give-other: "§fVous venez de §adonner §fà §b%target% §3%number% §b%name%§f."
+
+jobs-no-exist: "&cAucun métiers ne porte ce nom."
+jobs-join: "&fVous venez de &arejoindre&f le &amétier&7: &2%name%"
+jobs-max-reached: "&cVous avez atteint la limite maximum de métiers."
+jobs-no-have: "&cVous n'avez aucun métiers."
+jobs-dont-have: "&cVous ne disposez pas du métier: %name%"
+jobs-other-dont-have: "&cCe joueur ne disposes pas du métier: %name%"
+jobs-quit: "&fVous venez de &cquitter&f le &amétier&7: &2%name%"
+jobs-other-no-have: "&cCe joueur n'a aucun métiers."
+jobs-modify-level: "&fLe &aniveau&f de votre métier &2%name%&f vient d'être &amodifié&f à &a%value%&f."
+jobs-set-level: "&fLe &aniveau&f du métier &2%name%&f au joueur &a&l%target%&f vient d'être &amodifié&f à &a%value%&f."
+jobs-add-level: "&fLe &aniveau&f du métier &2%name%&f au joueur &a&l%target%&f vient d'augmenté&f de &a%value%&f."
+jobs-reset: "&fVous venez de &crénitialisé&f les &amétiers&f de &2%target%&f."
+jobs-resetall: "&fVous venez de &crénitialisé&f les &amétiers&f de &2%tous les joueurs%&f."
+jobs-is-reset: "&fVos &amétiers&f viennent d'être &crénitialisé&f."
+jobs-modify-points: "&fLes &apoints&f de votre métier &2%name%&f vient d'être &amodifié&f à &a%value%&f."
+jobs-set-points: "&fLes &apoints&f du métier &2%name%&f au joueur &a&l%target%&f vient d'être &amodifié&f à &a%value%&f."
+jobs-add-points: "&fLes &apoints&f du métier &2%name%&f au joueur &a&l%target%&f vient d'augmenté&f de &a%value%&f."
+jobs-palier-dont-have-level: "&cVous ne disposez pas du niveau de métier nécessaires."
+jobs-palier-receive-reward: "&fVous venez de &arecevoir &fvos &arécompenses&f de &2paliers&f."
+
+gemmes-add: "&fVous venez d'&aajouter&a %value% Gemmes&f au joueur &2%target%&f."
+gemmes-take: "&fVous venez de &cretirer&a %value% Gemmes&f au joueur &2%target%&f."
+gemmes-set: "&fVous venez de &cmodifier &fà&a %value%&f les &aGemmes&f du joueur &2%target%&f."
+gemmes-reset-other: "&fVous venez de &crénitialiser&f les &aGemmes&f du joueur &2%target%&f."
+gemmes-receive: "&fVous venez de &arecevoir&a %value% Gemmes&f."
+gemmes-withdraw: "&fVous venez d'être &cdébité &fde &a%value% Gemmes&f."
+gemmes-modify: "&fVos &agemmes&f viennent d'être &cmodifié&f à &a%value% Gemmes&f."
+gemmes-reset: "&fVos &agemmes&f viennent d'être &crénitialisés&f."
+
+voteparty-add: "&fVous venez d'&aajouter&f un &avote&f au &2VOTEPARTY&f."
+voteparty-finish:
+  - ""
+  - ""
+voteparty-show:
+  - "%count%/%max%"
+voteparty-set-max: "&fVous venez de &amodifier&f le &amaximum&f du &2voteparty&f à &a%value%&f."
+
+spawners-no-exist: "&cAucuns monstre de ce nom n'existe."
+spawners-receive: "&fVous venez de &arecevoir &fun &2SPAWNER &fà &a&l%name%&f."
+spawners-multipple-receive: "&fVous venez de &arecevoir &fx&7%quantity% &2SPAWNER &fà &a&l%name%&f."
+spawners-send: "&fVous venez d'&aenvoyer &fun &2SPAWNER &fà &a&l%name%&f au joueur &2%target%&f."
+spawners-multiple-send: "&fVous venez d'&aenvoyer &fx&7%quantity% &2SPAWNER &fà &a&l%name%&f au joueur &2%target%&f."
+
+private-to: "&2&lVous &7&l➔ &2&l%target% &7>&a %message%"
+private-from: "&2&l%sender% &7&l➔ &2&lVous &7>&a %message%"
+private-spy: "&c(CHATSPY) &2&l%sender% &7&l➔ &2&l%target% &7>&a %message%"
+private-ignore: "§fVous §aignorez§f le joueur §2%target%§f durant votre session."
+private-cant-him: "§cVous ne pouvez pas envoyer un message à vous même."
+private-ignore-cant-him: "§cVous ne pouvez pas ignorer vous même."
+private-dont-have: "§cVous ne disposez d'aucun message à répondre."
+private-ignored: "§cVous ignorez ce joueur ou il vous a ignoré."

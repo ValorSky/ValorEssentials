@@ -1,0 +1,8 @@
+delay: 60
+autoannounce:
+  1:
+    content:
+      - "test"
+  2:
+    content:
+      - "test 2"

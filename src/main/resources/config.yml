@@ -1,0 +1,24 @@
+server-name: "hexael"
+
+teleport-delay: 3
+
+silent-join: false
+join-format: ":check: §a§l%player%"
+quit-format: ":cross: §c§l%player%"
+new-player-format: "§fBienvenue §b§l%player% sur §aHexael §f! §7(%player_count%)"
+
+bottlexp-name: "§fNiveau§7: §b%level%"
+bottlexp-lore:
+  - ""
+  - "§fExpérience§7: §b%exp%"
+  - "§fNiveau§7: §b%level%"
+  - ""
+  - "§7Clique droit pour utiliser"
+  - ""
+
+spawn-world: "world"
+spawn-border: 800
+
+save-delay: 180
+save-period: 180
+autosave-delay: 180

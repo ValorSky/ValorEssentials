@@ -1,0 +1,66 @@
+plugins {
+    id 'java'
+    id 'com.gradleup.shadow' version '8.3.0'
+}
+
+group 'fr.kalipso'
+version '1.0'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+
+    maven { url = 'https://repo.papermc.io/repository/maven-public/' }
+    maven { url = 'https://repo.extendedclip.com/content/repositories/placeholderapi/' }
+    maven { url "https://maven.enginehub.org/repo/" }
+    maven { url 'https://jitpack.io' }
+    maven { url = "https://repo.codemc.io/repository/maven-public/" }
+
+}
+
+dependencies {
+    compileOnly group: 'io.papermc.paper', name: 'paper-api', version: '1.21.3-R0.1-SNAPSHOT'
+
+    compileOnly group: 'me.clip', name: 'placeholderapi', version: '2.11.6'
+
+    compileOnly 'org.projectlombok:lombok:1.18.36'
+    annotationProcessor 'org.projectlombok:lombok:1.18.36'
+    testCompileOnly 'org.projectlombok:lombok:1.18.36'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.36'
+
+    compileOnly 'com.sk89q.worldguard:worldguard-bukkit:7.0.10'
+    compileOnly 'com.sk89q.worldedit:worldedit-bukkit:7.3.0'
+
+    compileOnly 'net.luckperms:api:5.4'
+
+    implementation('com.github.MilkBowl:VaultAPI:1.7'){
+        exclude group: 'org.bukkit', module: 'bukkit'
+    }
+    compileOnly("de.tr7zw:item-nbt-api-plugin:2.14.0")
+    implementation 'fr.mrmicky:FastParticles:2.0.1'
+    implementation 'fr.mrmicky:FastInv:3.1.1'
+
+}
+
+shadowJar {
+    relocate 'fr.mrmicky.fastinv', 'fr.kalipso.fastinv'
+}
+
+processResources {
+    def props = [name: rootProject.name, version: version]
+    inputs.properties props
+    filteringCharset 'UTF-8'
+    filesMatching('plugin.yml') {
+        expand props
+    }
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
