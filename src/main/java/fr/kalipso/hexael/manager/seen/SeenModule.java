@@ -6,6 +6,8 @@ import fr.kalipso.hexael.manager.Manager;
 import fr.kalipso.hexael.utils.MessageUtils;
 import fr.kalipso.hexael.utils.Utils;
 import fr.kalipso.hexael.utils.object.CustomLocation;
+import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 
 public class SeenModule extends Manager {
@@ -21,11 +23,28 @@ public class SeenModule extends Manager {
         profilePlayer.setLastSeen(lastSeen);
     }
 
-    public void sendLastSeen(Player sender, Player target)
+    public void sendLastSeen(Player sender, Player target, String name)
     {
+
         if(target == null)
         {
-            sender.sendMessage(MessageUtils.sendError("no-player"));
+            OfflinePlayer offlinePlayer = Bukkit.getOfflinePlayer(name);
+            ProfilePlayer profilePlayer = this.getInstance().getManager().getDataManager().getPlayer(offlinePlayer.getName());
+            if(profilePlayer.getLastSeen() == null)
+            {
+                sender.sendMessage(MessageUtils.sendError("seen-no-last"));
+                return;
+            }
+            this.getInstance().getManager().getConfigManager().get("messages").getStringList("seen").forEach(line -> {
+                String loc = "§bx: " + profilePlayer.getLastSeen().getLastLocation().toString();
+                sender.sendMessage(line
+                        .replace("&", "§")
+                        .replace("%target%", target.getName())
+                        .replace("%adresse%", profilePlayer.getLastSeen().getIp())
+                        .replace("%date%", profilePlayer.getLastSeen().getDate())
+                        .replace("%pos%", loc)
+                );
+            });
             return;
         }
         ProfilePlayer profilePlayer = this.getInstance().getManager().getDataManager().getPlayer(target.getName());

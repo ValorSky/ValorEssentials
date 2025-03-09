@@ -1,8 +1,10 @@
 package fr.kalipso.hexael;
 
 import fr.kalipso.hexael.manager.Manager;
+import fr.kalipso.hexael.manager.enchant.command.EnchantCommand;
 import fr.kalipso.hexael.manager.privatemessage.command.PrivateMessageCommand;
 import fr.kalipso.hexael.manager.privatemessage.command.ResponseCommand;
+import fr.kalipso.hexael.manager.teleport.command.TeleportCommand;
 import fr.kalipso.hexael.utils.io.IOUtil;
 import lombok.Getter;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -41,6 +43,8 @@ public class hEssentials extends JavaPlugin {
         manager.loadManagers();
         getCommand("msg").setExecutor(new PrivateMessageCommand());
         getCommand("response").setExecutor(new ResponseCommand());
+        getCommand("enchant").setExecutor(new EnchantCommand());
+        getCommand("teleport").setExecutor(new TeleportCommand());
 
     }
 

@@ -28,8 +28,8 @@ public class FlyModule extends Manager {
         {
             if(sender.hasPermission("essentials.fly.bypass") || sender.isOp())
             {
-                sender.setFlying(true);
                 sender.setAllowFlight(true);
+                sender.setFlying(true);
                 sender.sendMessage(MessageUtils.sendMessage("fly-active"));
                 flying.add(sender);
             }
@@ -39,8 +39,8 @@ public class FlyModule extends Manager {
             }
             else if(profile.getFlyTime() > 0)
             {
-                sender.setFlying(true);
                 sender.setAllowFlight(true);
+                sender.setFlying(true);
                 flying.add(sender);
                 sender.sendMessage(MessageUtils.sendMessage("fly-active"));
                 taskPlayers.put(sender.getUniqueId(), new FlyTask(sender).runTaskTimerAsynchronously(this.getInstance(), 0, profile.getFlyTime()).getTaskId());

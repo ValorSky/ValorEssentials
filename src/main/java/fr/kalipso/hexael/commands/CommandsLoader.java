@@ -7,6 +7,7 @@ import fr.kalipso.hexael.manager.anvil.command.AnvilCommand;
 import fr.kalipso.hexael.manager.back.command.BackCommand;
 import fr.kalipso.hexael.manager.bottlexp.command.BottlexpCommand;
 import fr.kalipso.hexael.manager.broadcast.command.BroadcastCommand;
+import fr.kalipso.hexael.manager.broadcast.command.PubCommand;
 import fr.kalipso.hexael.manager.clearinventory.command.ClearInventoryCommand;
 import fr.kalipso.hexael.manager.condense.command.CondenseCommand;
 import fr.kalipso.hexael.manager.craft.command.CraftCommand;
@@ -50,6 +51,7 @@ import fr.kalipso.hexael.manager.spawn.command.subcommand.SpawnSetCommand;
 import fr.kalipso.hexael.manager.speed.command.SpeedCommand;
 import fr.kalipso.hexael.manager.teleport.command.TeleportCommand;
 import fr.kalipso.hexael.manager.teleport.command.subcommand.*;
+import fr.kalipso.hexael.manager.top.command.TopCommand;
 import fr.kalipso.hexael.manager.vanish.command.VanishCommand;
 import fr.kalipso.hexael.manager.warp.command.WarpCommand;
 import fr.kalipso.hexael.manager.warp.command.subcommand.WarpCreateCommand;
@@ -131,5 +133,7 @@ public class CommandsLoader extends Manager {
         this.commandFramework.registerCommands(new VotepartyAddCommand());
         this.commandFramework.registerCommands(new ClearInventoryCommand());
         this.commandFramework.registerCommands(new IgnoreCommand());
+        this.commandFramework.registerCommands(new PubCommand());
+        this.commandFramework.registerCommands(new TopCommand());
     }
 }

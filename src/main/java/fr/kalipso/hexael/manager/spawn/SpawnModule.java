@@ -59,6 +59,7 @@ public class SpawnModule extends Manager {
         CustomLocation spawnLocation = new CustomLocation(loc.getWorld().getName(), loc.getBlockX(), loc.getBlockY(), loc.getBlockZ());
         this.getInstance().getManager().getDataManager().getServer().setSpawnLocation(spawnLocation);
         this.getInstance().getManager().getDataManager().getProfileServer().save();
+        spawnLocation.toLocation().getWorld().setSpawnLocation(loc);
         sender.sendMessage(MessageUtils.sendMessage("spawn-set"));
     }
 

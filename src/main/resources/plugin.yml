@@ -11,3 +11,9 @@ commands:
   response:
     description: Répond à un message privé à un joueur
     aliases: [r, reply]
+  enchant:
+    description: Enchant l'item en main
+    aliases: [enchantment]
+  teleport:
+    description: Teleporte a un joueur
+    aliases: [tp]

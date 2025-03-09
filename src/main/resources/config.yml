@@ -18,6 +18,9 @@ bottlexp-lore:
 
 spawn-world: "world"
 spawn-border: 800
+spawn-border-x: 0
+spawn-border-y: 70
+spawn-border-z: 0
 
 save-delay: 180
 save-period: 180

@@ -15,7 +15,7 @@ public class BorderModule extends Manager {
     public void setSpawnBorder()
     {
         World world = Bukkit.getWorld(this.getInstance().getManager().getConfigManager().get("main").getString("spawn-world"));
-        world.getWorldBorder().setCenter(new Location(world, 0, 0, 0));
+        world.getWorldBorder().setCenter(new Location(world, this.getInstance().getManager().getConfigManager().get("main").getDouble("spawn-border-x"), this.getInstance().getManager().getConfigManager().get("main").getDouble("spawn-border-y"), this.getInstance().getManager().getConfigManager().get("main").getDouble("spawn-border-z")));
         world.getWorldBorder().setSize(this.getInstance().getManager().getConfigManager().get("main").getDouble("spawn-border"));
     }
 }

@@ -5,6 +5,8 @@ import fr.kalipso.hexael.hEssentials;
 import fr.kalipso.hexael.manager.Manager;
 import fr.kalipso.hexael.manager.back.listener.BackListener;
 import fr.kalipso.hexael.manager.bottlexp.listener.BottlexpListener;
+import fr.kalipso.hexael.manager.chat.ChatListener;
+import fr.kalipso.hexael.manager.coloredchat.ColoredChatModule;
 import fr.kalipso.hexael.manager.deathmessages.listener.DeathMessagesListener;
 import fr.kalipso.hexael.manager.fly.listener.FlyListener;
 import fr.kalipso.hexael.manager.gamemode.listener.GamemodeListener;
@@ -38,5 +40,7 @@ public class EventsLoader extends Manager {
         instance.getServer().getPluginManager().registerEvents(new FlyListener(), instance);
         instance.getServer().getPluginManager().registerEvents(new ProfilePlayerListener(), instance);
         instance.getServer().getPluginManager().registerEvents(new PrivateMessageListener(), instance);
+        instance.getServer().getPluginManager().registerEvents(new ColoredChatModule(), instance);
+        instance.getServer().getPluginManager().registerEvents(new ChatListener(), instance);
     }
 }

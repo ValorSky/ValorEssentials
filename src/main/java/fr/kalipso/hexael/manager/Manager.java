@@ -41,6 +41,7 @@ import fr.kalipso.hexael.manager.seen.SeenModule;
 import fr.kalipso.hexael.manager.spawn.SpawnModule;
 import fr.kalipso.hexael.manager.speed.SpeedModule;
 import fr.kalipso.hexael.manager.teleport.TeleportModule;
+import fr.kalipso.hexael.manager.top.TopModule;
 import fr.kalipso.hexael.manager.vanish.VanishModule;
 import fr.kalipso.hexael.manager.voteparty.VotepartyModule;
 import fr.kalipso.hexael.manager.warp.WarpModule;
@@ -93,6 +94,7 @@ public class Manager {
     @Getter private GemmesManager gemmesManager;
     @Getter private VotepartyModule votepartyModule;
     @Getter private PrivateMessageManager privateMessageManager;
+    @Getter private TopModule topModule;
 
     public Manager()
     {
@@ -144,6 +146,7 @@ public class Manager {
         this.clearInventoryModule = new ClearInventoryModule();
         this.votepartyModule = new VotepartyModule();
         this.privateMessageManager = new PrivateMessageManager();
+        this.topModule = new TopModule();
 
         new CommandsLoader();
         new EventsLoader();

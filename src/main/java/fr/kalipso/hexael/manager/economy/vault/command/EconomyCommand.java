@@ -6,6 +6,7 @@ import fr.kalipso.hexael.utils.command.CommandArgs;
 import fr.kalipso.hexael.utils.command.ICommand;
 import fr.kalipso.hexael.utils.command.annotations.Command;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 
 import java.io.IOException;
 
@@ -33,27 +34,50 @@ public class EconomyCommand extends ICommand {
                     .replace("%player%", Bukkit.getPlayer(args.getArgs(0)).getName()));
         }
           else if (args.getArgs(0).equalsIgnoreCase("give") && args.length() == 3) {
-                       if(args.getPlayer().hasPermission("essentials.economy.admin")) {
+              if(args.getSender() instanceof Player) {
+                  if (args.getPlayer().hasPermission("essentials.economy.admin")) {
 
-                  if (Bukkit.getPlayer(args.getArgs(1)) == null) {
-                    args.getSender().sendMessage(MessageUtils.sendError("no-player"));
-                    return;
+                      if (Bukkit.getPlayer(args.getArgs(1)) == null) {
+                          args.getSender().sendMessage(MessageUtils.sendError("no-player"));
+                          return;
 
-                }
-                  if(args.getArgs(1).equalsIgnoreCase("@all"))
-                  {
-                      Bukkit.getOnlinePlayers().forEach(players ->  {
-                          getInstance().getManager().getEconomyManager().depositMoney(players.getName(), Double.parseDouble(args.getArgs(2)));
-                      });
-                      return;
+                      }
+                      if (args.getArgs(1).equalsIgnoreCase("@all")) {
+                          Bukkit.getOnlinePlayers().forEach(players -> {
+                              getInstance().getManager().getEconomyManager().depositMoney(players.getName(), Double.parseDouble(args.getArgs(2)));
+                          });
+                          return;
+                      }
+                      args.getSender().sendMessage(MessageUtils.sendMessage("eco-give")
+                              .replace("%money%", args.getArgs(2))
+                              .replace("%player%", Bukkit.getPlayer(args.getArgs(1)).getName()));
+                      Bukkit.getPlayer(args.getArgs(1)).sendMessage(MessageUtils.sendMessage("eco-receive")
+                              .replace("%money%", args.getArgs(2))
+                              .replace("%player%", Bukkit.getPlayer(args.getArgs(1)).getName()));
+                      getInstance().getManager().getEconomyManager().depositMoney(Bukkit.getPlayer(args.getArgs(1)).getName(), Double.parseDouble(args.getArgs(2)));
                   }
-                args.getSender().sendMessage(MessageUtils.sendMessage("eco-give")
-                        .replace("%money%", args.getArgs(2))
-                        .replace("%player%", Bukkit.getPlayer(args.getArgs(1)).getName()));
-                Bukkit.getPlayer(args.getArgs(1)).sendMessage(MessageUtils.sendMessage("eco-receive")
-                        .replace("%money%", args.getArgs(2))
-                        .replace("%player%", Bukkit.getPlayer(args.getArgs(1)).getName()));
-                getInstance().getManager().getEconomyManager().depositMoney(Bukkit.getPlayer(args.getArgs(1)).getName(), Double.parseDouble(args.getArgs(2)));
+              }
+              else if(!(args.getSender() instanceof Player)) {
+
+                    if (Bukkit.getPlayer(args.getArgs(1)) == null) {
+                        args.getSender().sendMessage(MessageUtils.sendError("no-player"));
+                        return;
+
+                    }
+                    if (args.getArgs(1).equalsIgnoreCase("@all")) {
+                        Bukkit.getOnlinePlayers().forEach(players -> {
+                            getInstance().getManager().getEconomyManager().depositMoney(players.getName(), Double.parseDouble(args.getArgs(2)));
+                        });
+                        return;
+                    }
+                    args.getSender().sendMessage(MessageUtils.sendMessage("eco-give")
+                            .replace("%money%", args.getArgs(2))
+                            .replace("%player%", Bukkit.getPlayer(args.getArgs(1)).getName()));
+                    Bukkit.getPlayer(args.getArgs(1)).sendMessage(MessageUtils.sendMessage("eco-receive")
+                            .replace("%money%", args.getArgs(2))
+                            .replace("%player%", Bukkit.getPlayer(args.getArgs(1)).getName()));
+                    getInstance().getManager().getEconomyManager().depositMoney(Bukkit.getPlayer(args.getArgs(1)).getName(), Double.parseDouble(args.getArgs(2)));
+
             }
         }
         else if (args.getArgs(0).equalsIgnoreCase("take") && args.length() == 3) {

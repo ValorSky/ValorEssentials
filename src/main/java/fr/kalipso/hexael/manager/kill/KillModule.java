@@ -22,11 +22,8 @@ public class KillModule extends Manager {
     {
         sender.getWorld().getEntities().forEach(entity -> {
             if(entity instanceof Player)return;
-            if(entity instanceof Monster)
-            {
-                ((Monster) entity).setLastDamage(2000);
-            }
+            entity.remove();
         });
-        sender.sendMessage(MessageUtils.sendMessage("kill-player").replace ("%target", "les Monstres"));
+        sender.sendMessage("§aEntités supprimées.");
     }
 }
