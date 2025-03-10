@@ -1,6 +1,7 @@
 package fr.kalipso.hexael.utils;
 
 import net.luckperms.api.LuckPermsProvider;
+import net.luckperms.api.cacheddata.CachedPermissionData;
 import net.luckperms.api.model.user.User;
 import net.luckperms.api.node.NodeType;
 import net.luckperms.api.node.types.PermissionNode;
@@ -14,5 +15,11 @@ public class LuckPermsUtils {
         return user.getNodes(NodeType.PERMISSION).stream()
                 .filter(n -> !n.hasExpired())
                 .findFirst();
+    }
+
+    public static boolean checkPermission(Player player, String permission)
+    {
+        CachedPermissionData user = LuckPermsProvider.get().getPlayerAdapter(Player.class).getPermissionData(player);
+        return user.checkPermission(permission).asBoolean();
     }
 }

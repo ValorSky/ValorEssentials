@@ -29,6 +29,7 @@ public class BroadcastModule extends Manager {
             player.sendMessage("");
             player.sendMessage(annonce);
             player.sendMessage("");
+            player.sendMessage("§7§m-----------------------");
         });
     }
 }

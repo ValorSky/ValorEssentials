@@ -54,6 +54,7 @@ public class PlayerData extends Manager {
                     false,
                     new LastSeen(sender.getAddress().getAddress().toString(), Utils.millisFormat(System.currentTimeMillis()), new CustomLocation(sender.getWorld().getName(), sender.getLocation().getBlockX(), sender.getLocation().getBlockY(), sender.getLocation().getBlockZ())),
                     new HashMap<>(),
+                    1,
                     new ArrayList<KitsTime>(),
                     0,
                     0);

@@ -30,6 +30,7 @@ import fr.kalipso.hexael.manager.home.command.HomeCommand;
 import fr.kalipso.hexael.manager.home.command.subcommand.HomeDeleteCommand;
 import fr.kalipso.hexael.manager.home.command.subcommand.HomeListCommand;
 import fr.kalipso.hexael.manager.home.command.subcommand.HomeSetCommand;
+import fr.kalipso.hexael.manager.home.command.subcommand.HomeSetmaxCommand;
 import fr.kalipso.hexael.manager.infos.command.InfosCommand;
 import fr.kalipso.hexael.manager.kill.command.KillCommand;
 import fr.kalipso.hexael.manager.kits.commands.KitsCommand;
@@ -135,5 +136,6 @@ public class CommandsLoader extends Manager {
         this.commandFramework.registerCommands(new IgnoreCommand());
         this.commandFramework.registerCommands(new PubCommand());
         this.commandFramework.registerCommands(new TopCommand());
+        this.commandFramework.registerCommands(new HomeSetmaxCommand());
     }
 }

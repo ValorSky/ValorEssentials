@@ -10,6 +10,6 @@ public class TopModule extends Manager {
     public void teleportTop(Player sender)
     {
         Location loc = new Location(sender.getWorld(), sender.getLocation().getX(), sender.getWorld().getHighestBlockYAt((int) sender.getLocation().getX(), (int) sender.getLocation().getZ()) + 1, sender.getLocation().getZ());
-        TeleportationUtils.teleportCooldown(sender, loc, "§a§lEN HAUT");
+        TeleportationUtils.teleport(sender, loc, "§a§lEN HAUT");
     }
 }

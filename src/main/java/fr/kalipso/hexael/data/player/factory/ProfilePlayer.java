@@ -17,13 +17,14 @@ public @Data class ProfilePlayer {
     private boolean isStaff;
     private LastSeen lastSeen;
     private HashMap<String, Home> homeList;
+    private int maxHome;
     private List<KitsTime> kitsTake;
     private long flyTime;
 
     private int gemmes;
 
 
-    public ProfilePlayer(String name, UUID uuid, double doublons, boolean isStaff, LastSeen lastSeen, HashMap<String, Home> homeList, List<KitsTime> kitsTake, long flyTime, int gemmes)
+    public ProfilePlayer(String name, UUID uuid, double doublons, boolean isStaff, LastSeen lastSeen, HashMap<String, Home> homeList, int maxHome, List<KitsTime> kitsTake, long flyTime, int gemmes)
     {
         this.name = name;
         this.uuid = uuid;
@@ -31,6 +32,7 @@ public @Data class ProfilePlayer {
         this.isStaff = isStaff;
         this.lastSeen = lastSeen;
         this.homeList = homeList;
+        this.maxHome = maxHome;
         this.kitsTake = kitsTake;
         this.flyTime = flyTime;
         this.gemmes = gemmes;

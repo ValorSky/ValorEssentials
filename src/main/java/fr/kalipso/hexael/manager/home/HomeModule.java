@@ -3,10 +3,13 @@ package fr.kalipso.hexael.manager.home;
 import fr.kalipso.hexael.data.player.factory.ProfilePlayer;
 import fr.kalipso.hexael.manager.Manager;
 import fr.kalipso.hexael.manager.home.factory.Home;
+import fr.kalipso.hexael.utils.LuckPermsUtils;
 import fr.kalipso.hexael.utils.MessageUtils;
 import fr.kalipso.hexael.utils.TeleportationUtils;
 import fr.kalipso.hexael.utils.Utils;
 import fr.kalipso.hexael.utils.object.CustomLocation;
+import org.bukkit.Bukkit;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -33,16 +36,20 @@ public class HomeModule extends Manager {
             sender.sendMessage(MessageUtils.sendError("home-already-exist"));
             return;
         }
-        if(sender.hasPermission("essentials.home")) {
+        if(LuckPermsUtils.checkPermission(sender,"essentials.home." + profile.getMaxHome() + 1)) {
             sender.getEffectivePermissions().forEach(perm -> {
                 String perms = perm.getPermission();
                 if (perms.contains("essentials.home.")) {
                     String[] permission = perms.split("home.");
                     if (Utils.isInteger(permission[1])) {
-                        int maxHome = Integer.valueOf(permission[1]);
-                        if (profile.getHomeList().size() == maxHome) {
+                        if (profile.getHomeList().size() == profile.getMaxHome()) {
                             sender.sendMessage(MessageUtils.sendError("home-max-reached"));
                             return;
+                        }
+                        else
+                        {
+                            profile.getHomeList().put(name, new Home(name, CustomLocation.fromLocation(sender.getLocation())));
+                            sender.sendMessage(MessageUtils.sendMessage("home-set").replace("%name%", name));
                         }
                     }
 
@@ -86,6 +93,19 @@ public class HomeModule extends Manager {
             sender.sendMessage(line);
 
         });
+    }
+
+    public void setMax(CommandSender sender, String player, String value)
+    {
+        Player target = Bukkit.getPlayer(player);
+        if(target == null)
+        {
+            sender.sendMessage(MessageUtils.sendError("no-player"));
+            return;
+        }
+        ProfilePlayer profileTarget = this.getInstance().getManager().getDataManager().getPlayer(player);
+        profileTarget.setMaxHome(Integer.parseInt(value));
+        sender.sendMessage(MessageUtils.sendMessage("Maximum de home modifié pour " + player));
     }
 
     public void showHelp(Player sender)

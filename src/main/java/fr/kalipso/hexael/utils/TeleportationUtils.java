@@ -34,7 +34,7 @@ public class TeleportationUtils {
 
     public static void teleportRandomCooldown(Player target,final AtomicInteger cooldown, World world, int min, int max)
     {
-        Bukkit.getScheduler().scheduleAsyncRepeatingTask(instance, new BukkitRunnable() {
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(instance, new BukkitRunnable() {
             @Override
             public void run() {
                 AtomicInteger cd = cooldown;
@@ -52,7 +52,7 @@ public class TeleportationUtils {
 
     public static void teleport(Player sender, Location loc, String name)
     {
-        if(!sender.hasPermission("essentials.teleport.bypass"))
+        if(!LuckPermsUtils.checkPermission(sender, "essentials.teleport.bypass"))
         {
             teleportCooldown(sender, loc, name);
             return;
@@ -65,7 +65,7 @@ public class TeleportationUtils {
     {
         sender.sendMessage(MessageUtils.sendMessage("teleport-cooldown").replace("%time%", String.valueOf(cooldown)));
         Location senderLoc = sender.getLocation();
-        Bukkit.getScheduler().runTaskLaterAsynchronously(instance, new Runnable() {
+        Bukkit.getScheduler().runTaskLater(instance, new Runnable() {
             @Override
             public void run() {
                 sender.teleport(loc);
