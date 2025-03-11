@@ -12,6 +12,7 @@ public class ConfigManager extends Manager {
     private BukkitConfiguration autoannounceConfig;
     private BukkitConfiguration deathmessageConfig;
     private BukkitConfiguration votepartyConfig;
+    private BukkitConfiguration chatConfig;
 
     public ConfigManager()
     {
@@ -32,12 +33,18 @@ public class ConfigManager extends Manager {
         deathmessageConfig.load();
         votepartyConfig = new BukkitConfiguration(this.getInstance(), "voteparty", this.getInstance().getDataFolder().getAbsolutePath());
         votepartyConfig.load();
+        chatConfig = new BukkitConfiguration(this.getInstance(), "chat", this.getInstance().getDataFolder().getAbsolutePath());
+        chatConfig.load();
     }
 
     public YamlConfiguration get(String name)
     {
         if(name.equals("main")) {
             return mainConfig.getImplementation();
+        }
+        else if(name.equals("chat"))
+        {
+            return chatConfig.getImplementation();
         }
         else if(name.equals("messages"))
         {

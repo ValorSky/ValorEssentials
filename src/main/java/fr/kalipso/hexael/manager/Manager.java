@@ -9,6 +9,7 @@ import fr.kalipso.hexael.manager.autoannounce.AutoAnnounceModule;
 import fr.kalipso.hexael.manager.back.BackModule;
 import fr.kalipso.hexael.manager.border.BorderModule;
 import fr.kalipso.hexael.manager.broadcast.BroadcastModule;
+import fr.kalipso.hexael.manager.chat.ChatManager;
 import fr.kalipso.hexael.manager.clearinventory.ClearInventoryModule;
 import fr.kalipso.hexael.manager.condense.CondenseModule;
 import fr.kalipso.hexael.manager.config.ConfigManager;
@@ -95,6 +96,7 @@ public class Manager {
     @Getter private VotepartyModule votepartyModule;
     @Getter private PrivateMessageManager privateMessageManager;
     @Getter private TopModule topModule;
+    @Getter private ChatManager chatManager;
 
     public Manager()
     {
@@ -147,6 +149,7 @@ public class Manager {
         this.votepartyModule = new VotepartyModule();
         this.privateMessageManager = new PrivateMessageManager();
         this.topModule = new TopModule();
+        this.chatManager = new ChatManager();
 
         new CommandsLoader();
         new EventsLoader();

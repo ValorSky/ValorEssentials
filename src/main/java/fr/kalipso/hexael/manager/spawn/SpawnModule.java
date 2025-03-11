@@ -1,5 +1,6 @@
 package fr.kalipso.hexael.manager.spawn;
 
+import fr.kalipso.hexael.data.server.factory.ProfileServer;
 import fr.kalipso.hexael.manager.Manager;
 import fr.kalipso.hexael.utils.MessageUtils;
 import fr.kalipso.hexael.utils.TeleportationUtils;
@@ -46,7 +47,12 @@ public class SpawnModule extends Manager {
 
     public void teleport(Player sender)
     {
-        sender.teleport(this.getInstance().getManager().getDataManager().getServer().getSpawnLocation().toLocation());
+        ProfileServer server = this.getInstance().getManager().getDataManager().getServer();
+        if(server.getSpawnLocation() == null)
+        {
+            return;
+        }
+        sender.teleport(server.getSpawnLocation().toLocation());
     }
 
     public void setSpawn(Player sender, Location loc)

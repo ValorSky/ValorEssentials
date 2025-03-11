@@ -2,6 +2,7 @@ package fr.kalipso.hexael.utils;
 
 import net.luckperms.api.LuckPermsProvider;
 import net.luckperms.api.cacheddata.CachedPermissionData;
+import net.luckperms.api.model.group.Group;
 import net.luckperms.api.model.user.User;
 import net.luckperms.api.node.NodeType;
 import net.luckperms.api.node.types.PermissionNode;
@@ -21,5 +22,19 @@ public class LuckPermsUtils {
     {
         CachedPermissionData user = LuckPermsProvider.get().getPlayerAdapter(Player.class).getPermissionData(player);
         return user.checkPermission(permission).asBoolean();
+    }
+
+    public static String getRankName(Player player)
+    {
+        User user = LuckPermsProvider.get().getUserManager().getUser(player.getUniqueId());
+        if(user.getPrimaryGroup() == null) return null;
+        return user.getPrimaryGroup();
+    }
+
+    public static String getGroupPrefix(String groupName)
+    {
+        Group group = LuckPermsProvider.get().getGroupManager().getGroup(groupName);
+        if(group == null) return "lol";
+        return group.getDisplayName();
     }
 }
