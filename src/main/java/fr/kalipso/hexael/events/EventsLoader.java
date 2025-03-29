@@ -5,7 +5,7 @@ import fr.kalipso.hexael.hEssentials;
 import fr.kalipso.hexael.manager.Manager;
 import fr.kalipso.hexael.manager.back.listener.BackListener;
 import fr.kalipso.hexael.manager.bottlexp.listener.BottlexpListener;
-import fr.kalipso.hexael.manager.chat.ChatListener;
+import fr.kalipso.hexael.manager.chat.listener.ChatListener;
 import fr.kalipso.hexael.manager.coloredchat.ColoredChatModule;
 import fr.kalipso.hexael.manager.deathmessages.listener.DeathMessagesListener;
 import fr.kalipso.hexael.manager.fly.listener.FlyListener;
