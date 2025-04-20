@@ -1,9 +1,10 @@
-name: hEssentials
-api-version: 1.21
-version: 2.0.0
+name: ValorEssentials
+api-version: 1.20
+version: 2.0.1
 author: Kalipso
-main: fr.kalipso.hexael.hEssentials
-depend: [Vault]
+main: fr.kalipso.valorsky.hEssentials
+softdepend:
+  - Vault
 commands:
   msg:
     description: Envoie un message privé à un joueur

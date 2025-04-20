@@ -21,6 +21,8 @@ repositories {
     maven { url "https://maven.enginehub.org/repo/" }
     maven { url 'https://jitpack.io' }
     maven { url = "https://repo.codemc.io/repository/maven-public/" }
+    maven { url "https://s01.oss.sonatype.org/content/groups/public/" }
+
 
 }
 
@@ -39,13 +41,12 @@ dependencies {
 
     compileOnly 'net.luckperms:api:5.4'
 
-    implementation('com.github.MilkBowl:VaultAPI:1.7'){
-        exclude group: 'org.bukkit', module: 'bukkit'
-    }
+    compileOnly group: 'com.github.MilkBowl', name: 'VaultAPI', version: '1.7'
+
     compileOnly("de.tr7zw:item-nbt-api-plugin:2.14.0")
     implementation 'fr.mrmicky:FastParticles:2.0.1'
     implementation 'fr.mrmicky:FastInv:3.1.1'
-
+    implementation("io.github.rysefoxx.inventory:RyseInventory-Plugin:1.6.5")
 }
 
 shadowJar {

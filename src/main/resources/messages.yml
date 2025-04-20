@@ -202,3 +202,7 @@ fly-receive: "&fVous venez de recevoir &a%time% &fde &2temps de vol&f."
 fly-desactive: "&fVous venez de &cdésactif&f votre &2mode vol&f."
 fly-no-time: "§cVous n'avez pas de temps de vol."
 fly-active: "&fVous venez d'&aactiver&f votre &2mode vol&f."
+
+mail-no-have: "&cVous ne disposez d'aucun mail."
+mail-take: "&fVous venez de &arécupèrer&f votre &bmail&f."
+mail-receive: "&fVous venez de &arecevoir&f un nouveau &bmail&f. &7(/mail)"

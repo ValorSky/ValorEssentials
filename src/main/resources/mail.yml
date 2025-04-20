@@ -1,0 +1,10 @@
+inventory:
+  name: "&b&lMAIL"
+  item:
+    name: "&b&lMail"
+    material: PAPER
+    customModelData: 3004
+    lore:
+      - ""
+      - "&f%img_check% &aClique pour récupèrer !"
+      - ""
