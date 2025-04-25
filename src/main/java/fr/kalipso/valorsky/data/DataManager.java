@@ -4,6 +4,7 @@ import fr.kalipso.valorsky.data.player.PlayerData;
 import fr.kalipso.valorsky.data.player.factory.ProfilePlayer;
 import fr.kalipso.valorsky.data.server.ServerData;
 import fr.kalipso.valorsky.data.server.factory.ProfileServer;
+import fr.kalipso.valorsky.data.task.SaveTask;
 import fr.kalipso.valorsky.manager.Manager;
 import fr.kalipso.valorsky.utils.MessageUtils;
 import lombok.Getter;
@@ -13,6 +14,11 @@ public class DataManager extends Manager {
 
     @Getter private PlayerData profilePlayer;
     @Getter private ServerData profileServer;
+
+    public DataManager()
+    {
+        new SaveTask();
+    }
 
     public void loadProfiles()
     {
@@ -25,7 +31,7 @@ public class DataManager extends Manager {
         this.profileServer.save();
         this.profilePlayer.save();
         this.getInstance().getManager().getKitsModule().saveData();
-        MessageUtils.sendLog("Données sauvegardés avec succès.");
+        MessageUtils.sendLog("(ValorEssentials) Données sauvegardés avec succès.");
     }
 
     public void resetProfile(Player sender, Player target)

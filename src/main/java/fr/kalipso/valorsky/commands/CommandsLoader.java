@@ -53,6 +53,8 @@ import fr.kalipso.valorsky.manager.spawn.command.subcommand.SpawnSetCommand;
 import fr.kalipso.valorsky.manager.speed.command.SpeedCommand;
 import fr.kalipso.valorsky.manager.teleport.command.TeleportCommand;
 import fr.kalipso.valorsky.manager.teleport.command.subcommand.*;
+import fr.kalipso.valorsky.manager.time.command.TimeDayCommand;
+import fr.kalipso.valorsky.manager.time.command.TimeNightCommand;
 import fr.kalipso.valorsky.manager.top.command.TopCommand;
 import fr.kalipso.valorsky.manager.vanish.command.VanishCommand;
 import fr.kalipso.valorsky.manager.warp.command.WarpCommand;
@@ -140,5 +142,7 @@ public class CommandsLoader extends Manager {
         this.commandFramework.registerCommands(new HomeSetmaxCommand());
         this.commandFramework.registerCommands(new MailCommand());
         this.commandFramework.registerCommands(new MailTestCommand());
+        this.commandFramework.registerCommands(new TimeDayCommand());
+        this.commandFramework.registerCommands(new TimeNightCommand());
     }
 }

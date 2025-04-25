@@ -43,6 +43,7 @@ import fr.kalipso.valorsky.manager.seen.SeenModule;
 import fr.kalipso.valorsky.manager.spawn.SpawnModule;
 import fr.kalipso.valorsky.manager.speed.SpeedModule;
 import fr.kalipso.valorsky.manager.teleport.TeleportModule;
+import fr.kalipso.valorsky.manager.time.TimeManager;
 import fr.kalipso.valorsky.manager.top.TopModule;
 import fr.kalipso.valorsky.manager.vanish.VanishModule;
 import fr.kalipso.valorsky.manager.voteparty.VotepartyModule;
@@ -99,6 +100,7 @@ public class Manager {
     @Getter private TopModule topModule;
     @Getter private ChatManager chatManager;
     @Getter private MailManager mailManager;
+    @Getter private TimeManager timeManager;
 
     public Manager()
     {
@@ -153,6 +155,7 @@ public class Manager {
         this.topModule = new TopModule();
         this.chatManager = new ChatManager();
         this.mailManager = new MailManager();
+        this.timeManager = new TimeManager();
 
         new CommandsLoader();
         new EventsLoader();

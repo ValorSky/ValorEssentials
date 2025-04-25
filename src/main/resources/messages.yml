@@ -206,3 +206,6 @@ fly-active: "&fVous venez d'&aactiver&f votre &2mode vol&f."
 mail-no-have: "&cVous ne disposez d'aucun mail."
 mail-take: "&fVous venez de &arécupèrer&f votre &bmail&f."
 mail-receive: "&fVous venez de &arecevoir&f un nouveau &bmail&f. &7(/mail)"
+
+time-set-day: "&fVous venez de &adéfinir&f le temps à: &bJour"
+time-set-night: "&fVous venez de &adéfinir&f le temps à: &bNuit"
