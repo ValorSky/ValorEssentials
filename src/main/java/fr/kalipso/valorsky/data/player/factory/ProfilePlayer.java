@@ -24,9 +24,9 @@ public @Data class ProfilePlayer {
     private long flyTime;
     private int gemmes;
     private List<Mail> mails;
+    private long playTime;
 
-
-    public ProfilePlayer(String name, UUID uuid, double doublons, boolean isStaff, LastSeen lastSeen, HashMap<String, Home> homeList, int maxHome, List<KitsTime> kitsTake, long flyTime, int gemmes)
+    public ProfilePlayer(String name, UUID uuid, double doublons, boolean isStaff, LastSeen lastSeen, HashMap<String, Home> homeList, int maxHome, List<KitsTime> kitsTake, long flyTime, int gemmes, long playTime)
     {
         this.name = name;
         this.uuid = uuid;
@@ -39,6 +39,7 @@ public @Data class ProfilePlayer {
         this.flyTime = flyTime;
         this.gemmes = gemmes;
         this.mails = new ArrayList<>();
+        this.playTime = playTime;
     }
 
 

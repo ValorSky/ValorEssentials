@@ -17,4 +17,11 @@ public class ProfileCommand extends ICommand {
         args.getSender().sendMessage("");
         args.getSender().sendMessage("§7§m-----------------------");
     }
+
+    @Command(name="profile.resetPlayTime", permissionNode = "essentials.profile")
+    public void onCommandd(CommandArgs args) throws IOException {
+        this.getInstance().getManager().getDataManager().getProfilePlayer().getProvider().getProfiles().forEach(player -> {
+            player.setPlayTime(0);
+        });
+    }
 }

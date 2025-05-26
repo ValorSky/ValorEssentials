@@ -10,6 +10,7 @@ import fr.kalipso.valorsky.utils.Utils;
 import fr.kalipso.valorsky.utils.object.CustomLocation;
 import lombok.Getter;
 import org.bukkit.entity.Player;
+import org.bukkit.event.player.PlayerQuitEvent;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,6 +23,8 @@ public class PlayerData extends Manager {
     {
         this.loadProvider();
     }
+    public HashMap<Player, Long> playTime = new HashMap<>();
+
 
     public void loadProvider()
     {
@@ -57,8 +60,16 @@ public class PlayerData extends Manager {
                     1,
                     new ArrayList<KitsTime>(),
                     0,
+                    0,
                     0);
             this.provider.provide(sender.getName(), profilePlayer);
         }
+        this.playTime.put(sender, System.currentTimeMillis());
+    }
+
+    public void savePlayTime(PlayerQuitEvent event)
+    {
+        getProfile(event.getPlayer().getName()).setPlayTime(getProfile(event.getPlayer().getName()).getPlayTime() + (System.currentTimeMillis() - playTime.get(event.getPlayer())));
+        playTime.remove(event.getPlayer());
     }
 }
